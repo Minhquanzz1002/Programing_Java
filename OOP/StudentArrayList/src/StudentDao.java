@@ -12,45 +12,47 @@ import java.util.List;
 
 public class StudentDao {
     public static final String STUDENT_FILE_NAME = "Student.txt";
-    public void write(List<Student> studentList){
+
+    public void write(List<Student> studentList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
-        try{
+        try {
             fos = new FileOutputStream(new File("Student.txt"));
             oos = new ObjectOutputStream(fos);
             oos.writeObject(studentList);
-        }catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("Loi: " + e.getMessage());
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Loi: " + e.getMessage());
-        }finally{
+        } finally {
             closeStream(fos);
             closeStream(oos);
         }
     }
-    
+
     @SuppressWarnings("unchecked")
-    public List<Student> read(){
+    public List<Student> read() {
         List<Student> studentList = new ArrayList<>();
         FileInputStream fis = null;
         ObjectInputStream ois = null;
-        try{
+        try {
             fis = new FileInputStream(new File("Student.txt"));
             ois = new ObjectInputStream(fis);
             studentList = (List<Student>) ois.readObject();
-        }catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("Loi: " + e.getMessage());
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Loi: " + e.getMessage());
-        }catch(ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             System.out.println("Loi: " + e.getMessage());
-        }finally{
+        } finally {
             closeStream(fis);
             closeStream(ois);
         }
         return studentList;
     }
-    private void closeStream(InputStream is){
+
+    private void closeStream(InputStream is) {
         if (is != null) {
             try {
                 is.close();
@@ -60,11 +62,11 @@ public class StudentDao {
         }
     }
 
-    private void closeStream(OutputStream os){
-        if (os != null){
-            try{
+    private void closeStream(OutputStream os) {
+        if (os != null) {
+            try {
                 os.close();
-            }catch(IOException e){
+            } catch (IOException e) {
                 System.out.println("Loi: " + e.getMessage());
             }
         }
