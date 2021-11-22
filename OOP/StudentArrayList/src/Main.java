@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void showMenu(){
+    public static Scanner sc = new Scanner(System.in);
+
+    public static void showMenu() {
         System.out.println("--------------------------menu--------------------------");
         System.out.println("1. Add student.");
         System.out.println("2. Edit student by id.");
@@ -13,36 +15,42 @@ public class Main {
         System.out.println("--------------------------------------------------------");
         System.out.println("Please choose: ");
     }
-    
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int choose;
-        do{
-            showMenu();
-            try{
-                System.out.print("Choose: ");
-                choose = Integer.parseInt(sc.nextLine());
-            }catch(NumberFormatException e){
-                System.err.println("Nhap loi! Tu dong thoat!");
-                choose = 0;
-            }
-            switch (choose) {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 0:
-                    System.out.println("Exited");
-                    break;
-                default:
 
-                    break;
+    public static void main(String[] args) {
+        StudentManager studentManager = new StudentManager();
+        String choose = null;
+        int studentId;
+        do {
+            showMenu();
+            choose = sc.nextLine();
+            switch (choose) {
+            case "1":
+                studentManager.add();
+                break;
+            case "2":
+                studentId = studentManager.inputId();
+                studentManager.edit(studentId);
+                break;
+            case "3":
+                studentId = studentManager.inputId();
+                studentManager.delete(studentId);
+                break;
+            case "4":
+                studentManager.sortStudentByGPA();
+                break;
+            case "5":
+                studentManager.sortStudentByName();
+                break;
+            case "6":
+                studentManager.show();
+                break;
+            case "0":
+                System.out.println("Exited");
+                break;
+            default:
+                System.out.println("invalid! please choose action in below menu:");
+                break;
             }
-        }while(choose != 0);
-        sc.close();
+        } while (!choose.equals("0"));
     }
 }
