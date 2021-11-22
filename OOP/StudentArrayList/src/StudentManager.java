@@ -121,7 +121,7 @@ public class StudentManager {
         while (true) {
             try {
                 float gpa = Float.parseFloat(sc.nextLine());
-                if (gpa <= 0 || gpa > 100) {
+                if (gpa < 0 || gpa > 10) {
                     throw new NumberFormatException();
                 }
                 return gpa;
