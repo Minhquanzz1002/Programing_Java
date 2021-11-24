@@ -1,9 +1,11 @@
-import java.util.Scanner;
-
+/**
+ * Student class
+ * 
+ * @author MinhQuan
+ */
 public class Student extends Person {
     private float mark1;
     private float mark2;
-    public static Scanner sc = new Scanner(System.in);
 
     public Student() {
     }
@@ -28,6 +30,11 @@ public class Student extends Person {
         return (mark1 + mark2) / 2;
     }
 
+    /**
+     * input student mark
+     * 
+     * @return mark
+     */
     public float inputMark() {
         System.out.print("Input mark: ");
         while (true) {
@@ -44,7 +51,8 @@ public class Student extends Person {
 
     }
 
-    public String toString(){
+    @Override
+    public String toString() {
         return super.toString() + String.format("%10.2f | %10.2f | %10.2f", mark1, mark2, calculateAverage());
     }
 }

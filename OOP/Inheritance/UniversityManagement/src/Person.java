@@ -1,6 +1,14 @@
+import java.util.Scanner;
+
+/**
+ * Person class
+ * 
+ * @author MinhQuan
+ */
 public class Person {
     private String name;
     private String address;
+    public static Scanner sc = new Scanner(System.in);
 
     public Person() {
     }

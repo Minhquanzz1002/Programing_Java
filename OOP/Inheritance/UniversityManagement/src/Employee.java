@@ -1,11 +1,15 @@
-import java.util.Scanner;
-
+/**
+ * Employee class
+ * 
+ * @author MinhQuan
+ */
 public class Employee extends Person {
-    private int salaryCoefficient;  // He so luong
-    public static Scanner sc = new Scanner(System.in);
+    private int salaryCoefficient; // He so luong
+
     public Employee() {
     }
 
+    // getter && setter
     public int getSalaryCoefficient() {
         return salaryCoefficient;
     }
@@ -14,7 +18,7 @@ public class Employee extends Person {
         this.salaryCoefficient = salaryCoefficient;
     }
 
-    public int inputSalaryCoefficient(){
+    public int inputSalaryCoefficient() {
         System.out.print("Input salary coefficient: ");
         return Integer.parseInt(sc.nextLine());
     }

@@ -1,7 +1,13 @@
 import java.util.Scanner;
-
+/**
+ * Main class
+ * @author MinhQuan
+ */
 public class Main {
     public static Scanner sc = new Scanner(System.in);
+    /**
+     * Create menu
+     */
     public static void showMenu(){
         System.out.println("-------------------------------menu---------------------------------");
         System.out.println("1. Add student");
@@ -10,7 +16,6 @@ public class Main {
         System.out.println("4. Show student.");
         System.out.println("5. Show employee.");
         System.out.println("6. Show customer.");
-        System.out.println(". Delete");
         System.out.println("0. Exit");
         System.out.println("---------------------------------------------------------------------");
         System.out.print("Please choose: ");
@@ -19,6 +24,7 @@ public class Main {
         Management management = new Management();
         String choose = null;
         do {
+            // Show menu
             showMenu();
             choose = sc.nextLine();
             switch (choose) {

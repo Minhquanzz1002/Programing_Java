@@ -1,10 +1,12 @@
-import java.util.Scanner;
-
+/**
+ * Customer class
+ * 
+ * @author MinhQuan
+ */
 public class Customer extends Person {
     private String companyName;
     private int invoiceValue; // Gia tri don hang
     private String evaluate; // Danh gia
-    public static Scanner sc = new Scanner(System.in);
 
     public Customer() {
     }
@@ -48,7 +50,7 @@ public class Customer extends Person {
         return sc.nextLine();
     }
 
-    public String toString(){
+    public String toString() {
         return super.toString() + String.format("%20s | %10d | %20s", companyName, invoiceValue, evaluate);
     }
 }
