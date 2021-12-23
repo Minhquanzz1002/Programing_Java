@@ -3,14 +3,18 @@ package cau1;
 import java.util.Scanner;
 
 public class Circle {
-    Scanner sc = new Scanner(System.in);
-    protected double radius;
+    protected static Scanner sc = new Scanner(System.in);
+    protected double radius;    // ban kinh
 
     Circle() {
         this.radius = inputRadius();
     }
 
-    protected double inputRadius() {
+    /**
+     * Nhap du lieu cho ban kinh
+     * @return ban kinh
+     */
+    public double inputRadius() {
         double radius;
         System.out.print("Nhap ban kinh(r > 0): ");
         while (true) {
@@ -26,7 +30,8 @@ public class Circle {
         }
     }
 
-    protected double getArea() {
+    // Getter && Setter
+    public double getArea() {
         return Math.PI * radius * radius;
     }
 

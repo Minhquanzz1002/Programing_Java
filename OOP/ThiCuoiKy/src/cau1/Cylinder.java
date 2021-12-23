@@ -1,13 +1,17 @@
 package cau1;
 
 public class Cylinder extends Circle {
-    private double height;
+    private double height;  // chieu cao
 
     Cylinder() {
         super();
         this.height = inputHeight();
     }
 
+    /**
+     * Nhap du lieu cho chieu cao
+     * @return chieu cao
+     */
     protected double inputHeight() {
         double height;
         System.out.print("Nhap chieu cao(h > 0): ");
@@ -24,12 +28,12 @@ public class Cylinder extends Circle {
         }
     }
 
+    // Getter && Setter
     public double tinhDienTichXungQuanh() {
-        return 2 * Math.PI * radius * height;
+        return this.getPerimeter() * height;
     }
 
     public double tinhDienTichHaiDay() {
         return this.getArea() * 2;
     }
-
 }
