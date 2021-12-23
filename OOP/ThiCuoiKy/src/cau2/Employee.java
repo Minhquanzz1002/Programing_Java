@@ -19,7 +19,7 @@ public class Employee extends Person {
                 }
                 return salary;
             } catch (NumberFormatException e) {
-                System.out.print("Nhap loi! Hay nhap lai luong nhan vien: ");
+                System.out.print("Nhap loi! Hay nhap lai luong nhan vien(luong >= 0): ");
             }
         }
     }
@@ -37,14 +37,19 @@ public class Employee extends Person {
     }
 
     /**
-     * Kiem tra xem nhan vien da co trong cty chua
-     * 
-     * @param dsNV danh sach nhan vien trong cty
+     * Kiem tra xem nhan vien da co trong cty chua tinh ca "nhan vien" va "quan ly"
+     * @param dsNV danh sach nhan vien
+     * @param dsQuanLy danh sach quan ly
      * @return Dung/Sai
      */
-    public boolean kiemTraTonTai(Employee[] dsNV) {
+    public boolean kiemTraTonTai(Employee[] dsNV, Manager[] dsQuanLy) {
         for (int i = 0; i < dsNV.length; i++) {
             if (this.equals(dsNV[i])) {
+                return true;
+            }
+        }
+        for (Manager manager : dsQuanLy) {
+            if (this.equals((Employee) manager)) {
                 return true;
             }
         }
@@ -55,7 +60,7 @@ public class Employee extends Person {
     public boolean equals(Object obj) {
         if (obj instanceof Employee) {
             Employee e = (Employee) obj;
-            if (e.id.equals(this.id) == true && e.salary == this.salary && e.getName().equals(this.getName()) == true
+            if (e.id.equals(this.id) && e.salary == this.salary && e.getName().equals(this.getName())
                     && e.getYear() == this.getYear()) {
                 return true;
             }

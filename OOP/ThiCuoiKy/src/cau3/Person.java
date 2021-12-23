@@ -3,48 +3,50 @@ package cau3;
 import java.util.Scanner;
 
 public class Person {
-    static Scanner sc = new Scanner(System.in);
+    protected static Scanner sc = new Scanner(System.in);
     private String name;
     private String gender;
 
     Person() {
-
+        super();
     }
 
-    // Input values
+    /**
+     * Nhap du lieu cho "gioi tinh"
+     * @return chuoi gioi tinh (nam/nu)
+     */
     public String inputGender() {
         String gender;
-        System.out.print("Nhap gioi tinh: ");
+        System.out.print("Nhap gioi tinh(nam/nu): ");
         while (true) {
-            try {
-                gender = sc.nextLine();
-                if (gender.equalsIgnoreCase("nam") == true|| gender.equalsIgnoreCase("nu") == true) {
-                    return gender;
-                }
-                throw new Exception();
-            } catch (Exception e) {
-                System.out.print("Nhap loi! Hay nhap lai gioi tinh(nam/nu): ");
+            gender = sc.nextLine();
+            if (gender.equalsIgnoreCase("nam")|| gender.equalsIgnoreCase("nu")) {
+                return gender.trim();
             }
+            System.out.print("Nhap loi! Hay nhap lai gioi tinh(nam/nu): ");
         }
     }
 
+    /**
+     * Nhap du lieu cho "ten"
+     * @return chuoi ten
+     */
     public String inputName() {
         String name;
         System.out.print("Nhap ten: ");
         while (true) {
-            try {
-                name = sc.nextLine();
-                if (name.matches("^[a-zA-Z]+[a-zA-Z\\s]+$") && name.contains("  ") == false) {
-                    return name;
-                }
-                throw new Exception();
-            } catch (Exception e) {
-                System.out.print("Nhap loi! Hay nhap lai ten: ");
+            name = sc.nextLine();
+            if (name.matches("^[a-zA-Z]+[a-zA-Z\\s]+$") && name.contains("  ") == false) {
+                return name.trim();
             }
+            System.out.print("Nhap loi! Hay nhap lai ten: ");
         }
     }
 
-    public void nhap(){
+    /**
+     * Nhap du lieu cho "nguoi"
+     */
+    public void inputPerson(){
         this.name = inputName();
         this.gender = inputGender();
     }

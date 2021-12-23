@@ -9,7 +9,7 @@ public class Person {
     private int year;       // nam sinh
     protected String id;
 
-    public Person(String name, int year, String id) {
+    Person(String name, int year, String id) {
         this.name = name;
         this.year = year;
         this.id = id;
@@ -23,15 +23,11 @@ public class Person {
         String name;
         System.out.print("Nhap ten: ");
         while (true) {
-            try {
-                name = sc.nextLine();
-                if (name.matches("^[a-zA-Z]+[a-zA-Z\\s]+$") && name.contains("  ") == false) {
-                    return name;
-                }
-                throw new Exception();
-            } catch (Exception e) {
-                System.out.print("Nhap loi! Hay nhap lai ten: ");
+            name = sc.nextLine();
+            if (name.matches("^[a-zA-Z]+[a-zA-Z\\s]+$") && name.contains("  ") == false) {
+                return name.trim();
             }
+            System.out.print("Nhap loi! Hay nhap lai ten: ");
         }
     }
 
@@ -51,7 +47,7 @@ public class Person {
                 }
                 return year;
             } catch (NumberFormatException e) {
-                System.out.print("Nhap loi! Hay nhap lai nam sinh: ");
+                System.err.print("Nhap loi! Hay nhap lai nam sinh: ");
             }
         }
     }
@@ -65,8 +61,8 @@ public class Person {
         System.out.print("Nhap ID: ");
         while (true) { 
             id = sc.nextLine();
-            if (id.matches("[a-zA-Z0-9]+") == true) { // ID chi chua chu hoac so
-                return id;
+            if (id.matches("[a-zA-Z0-9]+")) { // ID chi chua chu hoac so
+                return id.trim();
             }
             System.err.print("Nhap loi! Hay nhap lai ID: ");
         }

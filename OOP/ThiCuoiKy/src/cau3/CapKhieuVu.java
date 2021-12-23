@@ -5,31 +5,39 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class CapKhieuVu {
-    private int thuTuCap;
-    private Queue<Person> cap;
+    private int thuTuCap;       // nhung nguoi di chung se co cung so thu tu
+    private Queue<Person> cap;  // nguoi hoac cap khieu vu
 
     CapKhieuVu() {
         cap = new LinkedList<>();
     }
 
-    public void themDon(int thuTuCap) {
-        System.out.println("--------------------------------------------------");
-        System.out.println("Moi nhap thong tin cap tham gia.");
-        this.thuTuCap = thuTuCap + 1;
-        Person person = new Person();
-        person.nhap();
-        cap.add(person);
-    }
-
-    public void themDoi(int thuTuCap) {
+    /**
+     * nhap du lieu cho nguoi di khieu vu don
+     * @param thuTuCap thu tu den cua nguoi nay
+     */
+    public void nhapDon(int thuTuCap) {
         System.out.println("--------------------------------------------------");
         System.out.println("Moi nhap thong tin nguoi tham gia.");
         this.thuTuCap = thuTuCap + 1;
+        Person person = new Person();
+        person.inputPerson();
+        cap.add(person);
+    }
+
+    /**
+     * Nhap du lieu cho cap di khieu vu
+     * @param thuTuCap thu tu den cua cap nay
+     */
+    public void nhapDoi(int thuTuCap) {
+        System.out.println("--------------------------------------------------");
+        System.out.println("Moi nhap thong tin cap tham gia.");
+        this.thuTuCap = thuTuCap + 1;
         Person person1 = new Person();
         Person person2 = new Person();
-        person1.nhap();
+        person1.inputPerson();
         cap.add(person1);
-        person2.nhap();
+        person2.inputPerson();
         cap.add(person2);
     }
 
@@ -39,7 +47,7 @@ public class CapKhieuVu {
     }
 
     public void setThuTuCap(int thuTuCap) {
-        this.thuTuCap = thuTuCap + 1;
+        this.thuTuCap = thuTuCap;
     }
 
     public Queue<Person> getCap() {
@@ -55,8 +63,7 @@ public class CapKhieuVu {
         String result = "";
         Iterator<Person> itor = cap.iterator();
         while (itor.hasNext()) {
-            Person x = itor.next();
-            result += String.format("%-10d|", thuTuCap) + x.toString() + "\n";
+            result += String.format("%-10d|", thuTuCap) + itor.next().toString() + "\n";
         }
         return result;
     }

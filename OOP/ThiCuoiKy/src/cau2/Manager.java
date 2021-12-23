@@ -1,10 +1,10 @@
 package cau2;
 
 public class Manager extends Employee {
-    private Employee assistant;
+    private Employee assistant; // tro ly
 
-    public Manager(Person person, int salary, Employee assistant) {
-        super(person, salary);
+    Manager(Person person, int salary, Employee assistant) {
+        super(person, salary);  // thong tin cua Manager
         this.assistant = assistant;
     }
 

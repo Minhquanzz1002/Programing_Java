@@ -28,11 +28,18 @@ public class Cylinder extends Circle {
         }
     }
 
-    // Getter && Setter
+    /**
+     * Tinh dien tich xung quanh hinh tru
+     * @return S xung quanh
+     */
     public double tinhDienTichXungQuanh() {
         return this.getPerimeter() * height;
     }
 
+    /**
+     * Tinh dien tich 2 day hinh tru
+     * @return S 2 day
+     */
     public double tinhDienTichHaiDay() {
         return this.getArea() * 2;
     }
