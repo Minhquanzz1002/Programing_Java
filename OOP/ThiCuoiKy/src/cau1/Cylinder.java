@@ -12,7 +12,7 @@ public class Cylinder extends Circle {
      * Nhap du lieu cho chieu cao
      * @return chieu cao
      */
-    protected double inputHeight() {
+    public double inputHeight() {
         double height;
         System.out.print("Nhap chieu cao(h > 0): ");
         while (true) {

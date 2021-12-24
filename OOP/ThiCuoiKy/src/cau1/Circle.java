@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Circle {
     protected static Scanner sc = new Scanner(System.in);
-    protected double radius;    // ban kinh
+    private double radius;    // ban kinh
 
     Circle() {
         this.radius = inputRadius();
@@ -30,11 +30,18 @@ public class Circle {
         }
     }
 
-    // Getter && Setter
+    /**
+     * Tinh dien tich hinh tron
+     * @return S
+     */
     public double getArea() {
         return Math.PI * radius * radius;
     }
 
+    /**
+     * Tinh chu vi hinh tron
+     * @return chu vi
+     */
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
