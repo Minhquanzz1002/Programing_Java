@@ -1,2 +1,7 @@
-package buttons;public class MainButton {
+package buttons;
+
+public class MainButton {
+    public static void main(String[] args) {
+        new Button();
+    }
 }

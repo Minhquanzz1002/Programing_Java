@@ -1,4 +1,4 @@
-package MyJFrame;
+package myframe;
 
 import javax.swing.*;
 import java.awt.*;
