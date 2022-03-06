@@ -22,10 +22,11 @@ public class Test {
     }
     public static void main(String[] args) {
         Queue<CapKhieuVu> dsKhieuVu = new LinkedList<>();
-        CapKhieuVu[] cap = new CapKhieuVu[3];
+        CapKhieuVu[] cap = new CapKhieuVu[4];
         cap[0] = new CapKhieuVu();
         cap[1] = new CapKhieuVu();
         cap[2] = new CapKhieuVu();
+        cap[3] = new CapKhieuVu();
 
         cap[0].nhapDoi(dsKhieuVu.size());
         dsKhieuVu.offer(cap[0]);
@@ -33,6 +34,8 @@ public class Test {
         dsKhieuVu.offer(cap[1]);
         cap[2].nhapDoi(dsKhieuVu.size());
         dsKhieuVu.offer(cap[2]);
+        cap[3].nhapDon(dsKhieuVu.size());
+        dsKhieuVu.offer(cap[3]);
 
         System.out.println("\nDanh sach cap khieu vu");
         inDanhSachKhieuVu(dsKhieuVu, 2);

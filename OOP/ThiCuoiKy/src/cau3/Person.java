@@ -36,7 +36,7 @@ public class Person {
         System.out.print("Nhap ten: ");
         while (true) {
             name = sc.nextLine();
-            if (name.matches("^[a-zA-Z]+[a-zA-Z\\s]+$") && name.contains("  ") == false) {
+            if (name.matches("^[a-zA-Z\\s]+$") && !name.contains("  ") && !name.trim().isEmpty()) {
                 return name.trim();
             }
             System.out.print("Nhap loi! Hay nhap lai ten: ");

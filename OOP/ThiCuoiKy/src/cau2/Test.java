@@ -10,6 +10,7 @@ public class Test {
      */
     public static void kiemTraNhanVien(Employee[] dsNV, Manager[] dsQuanLy) {
         Employee e = new Employee(new Person("", 0, ""), 0);
+        System.out.println("Nhap thong tin nhan vien can kiem tra.");
         e.inputEmployee();
         boolean result = e.kiemTraTonTai(dsNV, dsQuanLy);
         if (result) {
@@ -43,15 +44,15 @@ public class Test {
      * @param dsNV
      * @param dsQuanLy
      */
-    public static void inCacNhanVienCoLuongCaoNhat(Employee[] dsNV, Manager[] dsQuanLy){
+    public static void inCacNhanVienCoLuongCaoNhat(Employee[] dsNV, Manager[] dsQuanLy) {
         setLuongCaoNhat(dsNV, dsQuanLy);
         for (int i = 1; i < dsNV.length; i++) {
-            if (luongCaoNhat == dsNV[i].getSalary()){
+            if (luongCaoNhat == dsNV[i].getSalary()) {
                 System.out.println(dsNV[i].getDetail());
             }
         }
         for (int i = 0; i < dsQuanLy.length; i++) {
-            if (luongCaoNhat == dsQuanLy[i].getSalary()){
+            if (luongCaoNhat == dsQuanLy[i].getSalary()) {
                 System.out.println(dsQuanLy[i].getDetail());
             }
         }
@@ -134,11 +135,14 @@ public class Test {
         dsQuanLy[1] = new Manager(dsNguoi[11], 20000000, dsNV[5]);
         dsQuanLy[2] = new Manager(dsNguoi[12], 20000000, dsNV[5]);
         dsQuanLy[3] = new Manager(dsNguoi[13], 20000000, dsNV[5]);
-        dsQuanLy[4] = new Manager(dsNguoi[14], 30000000, dsNV[9]);
+        dsQuanLy[4] = new Manager(dsNguoi[14], 30000000, dsNV[4]);
 
         System.out.println("So nhan vien kim tro ly trong cty: " + demSoTroLy(dsNV, dsQuanLy));
+        System.out.println("\n--------------------------------------------------------------------------");
         kiemTraNhanVien(dsNV, dsQuanLy);
+        System.out.println("\n--------------------------------------------------------------------------");
         System.out.println("Tong luong cua tat ca nhan vien trong cty: " + tongLuongToanCongTy(dsNV, dsQuanLy));
+        System.out.println("\n--------------------------------------------------------------------------");
         System.out.println("Cac nhan vien co luong cao nhat trong cty.");
         System.out.format("%30s|%10s|%10s|%10s%n", "Ten nhan vien", "Nam sinh", "Gioi tinh", "Luong");
         inCacNhanVienCoLuongCaoNhat(dsNV, dsQuanLy);

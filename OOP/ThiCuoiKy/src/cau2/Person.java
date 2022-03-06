@@ -24,10 +24,10 @@ public class Person {
         System.out.print("Nhap ten: ");
         while (true) {
             name = sc.nextLine();
-            if (name.matches("^[a-zA-Z]+[a-zA-Z\\s]+$") && name.contains("  ") == false) {
+            if (name.matches("^[a-zA-Z\\s]+$") && !name.contains("  ") && !name.trim().isEmpty()) {
                 return name.trim();
             }
-            System.out.print("Nhap loi! Hay nhap lai ten: ");
+            System.err.print("Nhap loi! Hay nhap lai ten: ");
         }
     }
 
@@ -42,8 +42,8 @@ public class Person {
         while (true) {
             try {
                 year = Integer.parseInt(sc.nextLine());
-                if (cal.get(Calendar.YEAR) - year < 18 || cal.get(Calendar.YEAR) - year > 60) { // tuoi [18,60]
-                    throw new NumberFormatException();
+                if (cal.get(Calendar.YEAR) - year < 18 || cal.get(Calendar.YEAR) - year > 60) { 
+                    throw new NumberFormatException(); // tuoi [18,60]
                 }
                 return year;
             } catch (NumberFormatException e) {

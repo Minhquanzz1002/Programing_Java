@@ -8,6 +8,10 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
+    /**
+     * Nhap du lieu cho "luong"
+     * @return luong
+     */
     public int inputSalary() {
         int salary = 0;
         System.out.print("Nhap luong: ");
@@ -19,7 +23,7 @@ public class Employee extends Person {
                 }
                 return salary;
             } catch (NumberFormatException e) {
-                System.out.print("Nhap loi! Hay nhap lai luong nhan vien(luong >= 0): ");
+                System.err.print("Nhap loi! Hay nhap lai luong nhan vien(luong >= 0): ");
             }
         }
     }
