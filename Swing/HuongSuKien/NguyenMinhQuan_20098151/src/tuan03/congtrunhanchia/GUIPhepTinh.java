@@ -3,9 +3,11 @@ package tuan03.congtrunhanchia;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -44,6 +46,7 @@ public class GUIPhepTinh extends JFrame implements ActionListener {
 
 		/* NOURTH */
 		JLabel lblTieuDe = new JLabel("Tính Cộng Trừ Nhân Chia");
+		lblTieuDe.setFont(new Font("Arial", Font.BOLD, 20));
 
 		JPanel pnNourth = new JPanel();
 		pnNourth.setBackground(Color.CYAN);
@@ -51,12 +54,15 @@ public class GUIPhepTinh extends JFrame implements ActionListener {
 
 		/* WEST */
 		btnGiai = new JButton("Giải");
+		btnGiai.setMnemonic(KeyEvent.VK_G);
 		btnGiai.setFocusable(false);
 
 		btnXoa = new JButton("Xóa");
+		btnXoa.setMnemonic(KeyEvent.VK_X);
 		btnXoa.setFocusable(false);
 
 		btnThoat = new JButton("Thoát");
+		btnThoat.setMnemonic(KeyEvent.VK_T);
 		btnThoat.setFocusable(false);
 
 		JPanel pnWest = new JPanel();
@@ -95,10 +101,6 @@ public class GUIPhepTinh extends JFrame implements ActionListener {
 		pnSouth.add(pnBlue);
 
 		/* CENTER */
-		JPanel pnCenter = new JPanel();
-		pnCenter.setLayout(new BoxLayout(pnCenter, BoxLayout.Y_AXIS));
-		pnCenter.setBorder(BorderFactory.createTitledBorder("Phép toán"));
-
 		JLabel lblA = new JLabel("Nhập A:");
 
 		txtA = new JTextField(20);
@@ -143,7 +145,6 @@ public class GUIPhepTinh extends JFrame implements ActionListener {
 		pnPhepToan.add(rdbTru);
 		pnPhepToan.add(rdbNhan);
 		pnPhepToan.add(rdbChia);
-		pnPhepToan.setPreferredSize(new Dimension(100, 100));
 
 		JLabel lblKQ = new JLabel("Kết quả:");
 
@@ -154,6 +155,9 @@ public class GUIPhepTinh extends JFrame implements ActionListener {
 		pnKQ.add(lblKQ);
 		pnKQ.add(txtKQ);
 
+		JPanel pnCenter = new JPanel();
+		pnCenter.setLayout(new BoxLayout(pnCenter, BoxLayout.Y_AXIS));
+		pnCenter.setBorder(BorderFactory.createTitledBorder("Phép toán"));
 		pnCenter.add(pnA);
 		pnCenter.add(pnB);
 		pnCenter.add(pnPhepToan);
