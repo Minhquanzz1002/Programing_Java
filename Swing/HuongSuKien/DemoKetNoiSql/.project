@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>DemoKetNoiSql</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>libs/sqljdbc42.jar</name>
+			<type>1</type>
+			<location>D:/quann/Documents/Document_IUH/2021-2022_HK2_LTHSKJava/TH/sqljdbc42.jar</location>
+		</link>
+	</linkedResources>
+</projectDescription>
