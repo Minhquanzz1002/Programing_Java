@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class GUIGiaiPhuongTrinhBacHai extends JFrame {
 	public GUIGiaiPhuongTrinhBacHai(String title) {
 		setTitle(title);

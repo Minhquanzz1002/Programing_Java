@@ -384,9 +384,8 @@ public class GUIQuanLySach extends JFrame implements ActionListener, MouseListen
 			}
 		}
 		if (action == cboMaSach) {
-			String item = (String) cboMaSach.getSelectedItem();
-//			if (dsSach.kiemTraMaSachTonTai(item))
-//			tblModel.ro
+			int row = cboMaSach.getSelectedIndex();
+			tblSach.setRowSelectionInterval(row, row);
 		}
 	}
 

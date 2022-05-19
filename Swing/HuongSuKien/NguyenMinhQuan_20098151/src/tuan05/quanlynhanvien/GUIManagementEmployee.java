@@ -327,14 +327,17 @@ public class GUIManagementEmployee extends JFrame implements ActionListener, Mou
 			} else {
 				Employee emp = createNewEmployee();
 				if (emp == null) {
-					JOptionPane.showMessageDialog(null, "Thông tin nhập không hợp lệ!");
+					JOptionPane.showMessageDialog(null, "Thông tin nhập không hợp lệ");
 				} else {
-					lstEmp.addEmployee(emp);
-					Object[] obj = { emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getSex(),
-							emp.getAge(), emp.getSalary() };
-					tblModel.addRow(obj);
-					JOptionPane.showMessageDialog(null, "Thêm thành công!!");
-					clearItem();
+					if (lstEmp.addEmployee(emp)) {
+						Object[] obj = { emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getSex(),
+								emp.getAge(), emp.getSalary() };
+						tblModel.addRow(obj);
+						JOptionPane.showMessageDialog(null, "Thêm thành công!!");
+						clearItem();
+					}else {
+						JOptionPane.showMessageDialog(this, "Nhân viên đã tài tại");
+					}
 				}
 			}
 		}
@@ -371,27 +374,12 @@ public class GUIManagementEmployee extends JFrame implements ActionListener, Mou
 			}
 		}
 		if (action == btnSearch) {
-			if (btnSearch.getText().equals("Tìm")) {
-				if (txtSearch.getText().trim().isEmpty()) {
-					JOptionPane.showMessageDialog(this, "Vui lòng nhập ID nhân viên cần tìm kiếm!!!");
-				} else {
-					String id = txtSearch.getText().trim();
-					Employee emp = lstEmp.searchEmployee(id);
-					if (emp != null) {
-						Object[] obj = { emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getSex(),
-								emp.getAge(), emp.getSalary() };
-						DefaultTableModel model = new DefaultTableModel(col, 0);
-						tblEmp.setModel(model);
-						model.addRow(obj);
-						btnSearch.setText("Hủy");
-					} else {
-						JOptionPane.showMessageDialog(this, "Không tìm thấy nhân viên");
-					}
-				}
+			String item =  txtSearch.getText().trim();
+			int row = lstEmp.searchEmployee(item);
+			if (row != -1) {
+				tblEmp.setRowSelectionInterval(row, row);
 			}else {
-				tblEmp.setModel(tblModel = new DefaultTableModel(col, 0));
-				loadDataToTable(lstEmp.getLstEmployee(), tblModel);
-				btnSearch.setText("Tìm");
+				JOptionPane.showMessageDialog(this, "Không tìm thấy");
 			}
 		}
 		if (action == btnUpdate) {
@@ -420,6 +408,6 @@ public class GUIManagementEmployee extends JFrame implements ActionListener, Mou
 	}
 
 	public static void main(String[] args) {
-		new GUIManagementEmployee("Quáº£n lÃ½ nhÃ¢n viÃªn").doShow();
+		new GUIManagementEmployee("Quản lý nhân viên").doShow();
 	}
 }

@@ -25,6 +25,11 @@ public class ListEmployee implements Serializable {
 	}
 
 	public boolean addEmployee(Employee item) {
+		for (Employee e : lstEmployee) {
+			if (item.getEmployeeID().equalsIgnoreCase(e.getEmployeeID())) {
+				return false;
+			}
+		}
 		/* Kiểm tra nhân viên có tồn tại trong danh sách chưa */
 		if (lstEmployee.contains(item)) {
 			return false;
@@ -54,12 +59,12 @@ public class ListEmployee implements Serializable {
 		return lstEmployee.size();
 	}
 
-	public Employee searchEmployee(String id) {
+	public int searchEmployee(String id) {
 		for (Employee employee : lstEmployee) {
 			if (employee.getEmployeeID().equalsIgnoreCase(id)) {
-				return employee;
+				return lstEmployee.indexOf(employee);
 			}
 		}
-		return null;
+		return -1;
 	}
 }
