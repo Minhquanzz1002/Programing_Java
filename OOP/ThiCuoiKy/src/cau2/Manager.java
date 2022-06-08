@@ -5,7 +5,7 @@ public class Manager extends Employee {
 
     Manager(Person person, int salary, Employee assistant) {
         super(person, salary);  // thong tin cua Manager
-        this.assistant = assistant;
+        this.assistant = assistant; // thong tin tro ly
     }
 
     @Override
@@ -13,8 +13,13 @@ public class Manager extends Employee {
         return super.getDetail();
     }
 
+    // Getter && Setter
     public Employee getAssistant() {
         return assistant;
+    }
+
+    public void setAssistant(Employee assistant) {
+        this.assistant = assistant;
     }
 
     @Override

@@ -137,12 +137,14 @@ public class Test {
         dsQuanLy[3] = new Manager(dsNguoi[13], 20000000, dsNV[5]);
         dsQuanLy[4] = new Manager(dsNguoi[14], 30000000, dsNV[4]);
 
-        System.out.println("So nhan vien kim tro ly trong cty: " + demSoTroLy(dsNV, dsQuanLy));
-        System.out.println("\n--------------------------------------------------------------------------");
+        System.out.println("So nhan vien kim tro ly trong cty: "
+                + demSoTroLy(dsNV, dsQuanLy));
+        System.out.println("\n---------------------------------------------------------------");
         kiemTraNhanVien(dsNV, dsQuanLy);
-        System.out.println("\n--------------------------------------------------------------------------");
-        System.out.println("Tong luong cua tat ca nhan vien trong cty: " + tongLuongToanCongTy(dsNV, dsQuanLy));
-        System.out.println("\n--------------------------------------------------------------------------");
+        System.out.println("\n---------------------------------------------------------------");
+        System.out.println("Tong luong cua tat ca nhan vien trong cty: "
+                + tongLuongToanCongTy(dsNV, dsQuanLy));
+        System.out.println("\n---------------------------------------------------------------");
         System.out.println("Cac nhan vien co luong cao nhat trong cty.");
         System.out.format("%30s|%10s|%10s|%10s%n", "Ten nhan vien", "Nam sinh", "Gioi tinh", "Luong");
         inCacNhanVienCoLuongCaoNhat(dsNV, dsQuanLy);

@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,10 +14,9 @@ import java.util.regex.Pattern;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import tuan05.quanlynhanvien.Employee;
-import tuan05.quanlynhanvien.ListEmployee;
 import tuan05.quanlynhanvien.StoredData;
 
+@SuppressWarnings("serial")
 public class GUIQuanLySach extends JFrame implements ActionListener, MouseListener {
 	private DanhSachSach dsSach;
 	private static final String col = "Ma sach;Tua sach;Tac gia;Nam xuat ban;Nha xuat ban;So trang;Don gia;ISBN";

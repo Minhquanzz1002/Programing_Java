@@ -1,11 +1,12 @@
 package cau3;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class CapKhieuVu {
-    private int thuTuCap;       // nhung nguoi di chung se co cung so thu tu
-    private Queue<Person> cap;  // nguoi hoac cap khieu vu
+    private int thuTuCap; // nhung nguoi di chung se co cung so thu tu
+    private Queue<Person> cap; // nguoi hoac cap khieu vu
 
     CapKhieuVu() {
         cap = new LinkedList<>();
@@ -13,6 +14,7 @@ public class CapKhieuVu {
 
     /**
      * nhap du lieu cho nguoi di khieu vu don
+     * 
      * @param thuTuCap thu tu den cua nguoi nay
      */
     public void nhapDon(int thuTuCap) {
@@ -26,6 +28,7 @@ public class CapKhieuVu {
 
     /**
      * Nhap du lieu cho cap di khieu vu
+     * 
      * @param thuTuCap thu tu den cua cap nay
      */
     public void nhapDoi(int thuTuCap) {

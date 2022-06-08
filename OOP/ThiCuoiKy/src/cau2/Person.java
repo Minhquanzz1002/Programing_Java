@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Person {
     protected static Scanner sc = new Scanner(System.in);
     private String name;
-    private int year;       // nam sinh
+    private int year; // nam sinh
     protected String id;
 
     Person(String name, int year, String id) {
@@ -42,7 +42,7 @@ public class Person {
         while (true) {
             try {
                 year = Integer.parseInt(sc.nextLine());
-                if (cal.get(Calendar.YEAR) - year < 18 || cal.get(Calendar.YEAR) - year > 60) { 
+                if (cal.get(Calendar.YEAR) - year < 18 || cal.get(Calendar.YEAR) - year > 60) {
                     throw new NumberFormatException(); // tuoi [18,60]
                 }
                 return year;
@@ -59,7 +59,7 @@ public class Person {
     public String inputId() {
         String id;
         System.out.print("Nhap ID: ");
-        while (true) { 
+        while (true) {
             id = sc.nextLine();
             if (id.matches("[a-zA-Z0-9]+")) { // ID chi chua chu hoac so
                 return id.trim();
@@ -97,5 +97,5 @@ public class Person {
     public String getDetail() {
         return String.format("%30s|%10d|%10s", name, year, id);
     }
-    
+
 }
